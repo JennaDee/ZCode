@@ -4,7 +4,7 @@ node_modules/
 # Build files
 dist/
 
-# Environment variables (keep secrets private!)
+# Environment variables (keep secrets private)
 .env
 .env.*
 !.env.example
