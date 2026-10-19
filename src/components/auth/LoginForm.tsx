@@ -1,10 +1,10 @@
 import { Link } from "react-router";
 import { FormInput } from "../ui/FormInput";
-import { PreviewForm } from "./PreviewForm";
+import { AuthForm } from "./AuthForm";
 
 export function LoginForm() {
   return (
-    <PreviewForm mode="login" submitLabel="Log In">
+    <AuthForm mode="login" submitLabel="Log In">
       {(errors) => (
         <>
           <FormInput
@@ -30,6 +30,6 @@ export function LoginForm() {
           />
         </>
       )}
-    </PreviewForm>
+    </AuthForm>
   );
 }

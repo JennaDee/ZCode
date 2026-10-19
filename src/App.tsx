@@ -5,15 +5,22 @@ import { ButtonLink } from "./components/ui/Button";
 import { CosmicBackground } from "./components/landing/CosmicBackground";
 import { Footer } from "./components/layout/Footer";
 import { LandingPage } from "./pages/LandingPage";
+import { AuthCallbackPage } from "./pages/AuthCallbackPage";
 import { AuthPage } from "./pages/AuthPage";
+import { DashboardPage } from "./pages/DashboardPage";
+import { ProtectedRoute } from "./components/auth/ProtectedRoute";
+import { ResetPasswordPage } from "./pages/ResetPasswordPage";
 function RouteEffects() {
   const { pathname, hash } = useLocation();
   useEffect(() => {
     const names: Record<string, string> = {
       "/": "A little curiosity. Infinite possibilities.",
+      "/reset-password": "Choose a new password",
+      "/dashboard": "Your learning workspace",
       "/login": "Log in",
       "/register": "Create an account",
       "/forgot-password": "Reset password",
+      "/auth/callback": "Complete authentication",
     };
     document.title = `ZCode — ${names[pathname] ?? "Page not found"}`;
     if (hash)
@@ -36,7 +43,17 @@ export function App() {
       <CosmicBackground />
       <Header />
       <Routes>
+        <Route path="/reset-password" element={<ResetPasswordPage />} />
         <Route path="/" element={<LandingPage />} />
+        <Route
+          path="/dashboard"
+          element={
+            <ProtectedRoute>
+              <DashboardPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/auth/callback" element={<AuthCallbackPage />} />
         <Route path="/login" element={<AuthPage key="login" mode="login" />} />
         <Route
           path="/register"

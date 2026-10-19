@@ -1,10 +1,10 @@
 import { FormInput } from "../ui/FormInput";
-import { PreviewForm } from "./PreviewForm";
-import { MIN_PASSWORD_LENGTH } from "./validation";
+import { AuthForm } from "./AuthForm";
+import { NewPasswordFields } from "./NewPasswordFields";
 
 export function SignupForm() {
   return (
-    <PreviewForm mode="register" submitLabel="Create Account">
+    <AuthForm mode="register" submitLabel="Create Account">
       {(errors) => (
         <>
           <FormInput
@@ -12,7 +12,7 @@ export function SignupForm() {
             name="name"
             label="Display name"
             autoComplete="nickname"
-            placeholder="Alex Rivera"
+            placeholder="Jenna Dee"
             required
             error={errors.name}
           />
@@ -22,35 +22,13 @@ export function SignupForm() {
             type="email"
             label="Email address"
             autoComplete="email"
-            placeholder="you@example.com"
+            placeholder="jenna@example.com"
             required
             error={errors.email}
           />
-          <FormInput
-            id="password"
-            name="password"
-            type="password"
-            label="Password"
-            autoComplete="new-password"
-            placeholder={`At least ${MIN_PASSWORD_LENGTH} characters`}
-            minLength={MIN_PASSWORD_LENGTH}
-            required
-            error={errors.password}
-            hint={`Use at least ${MIN_PASSWORD_LENGTH} characters. A longer passphrase of unrelated words is easier to remember. Avoid names and common phrases.`}
-          />
-          <FormInput
-            id="confirm"
-            name="confirm"
-            type="password"
-            label="Confirm password"
-            visibilityLabel="confirmed password"
-            autoComplete="new-password"
-            placeholder="Re-enter your password"
-            required
-            error={errors.confirm}
-          />
+          <NewPasswordFields errors={errors} />
         </>
       )}
-    </PreviewForm>
+    </AuthForm>
   );
 }

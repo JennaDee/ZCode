@@ -1,9 +1,9 @@
 import { FormInput } from "../ui/FormInput";
-import { PreviewForm } from "./PreviewForm";
+import { AuthForm } from "./AuthForm";
 
 export function ForgotPasswordForm() {
   return (
-    <PreviewForm mode="reset" submitLabel="Submit">
+    <AuthForm mode="reset" submitLabel="Submit">
       {(errors) => (
         <FormInput
           id="email"
@@ -16,6 +16,6 @@ export function ForgotPasswordForm() {
           error={errors.email}
         />
       )}
-    </PreviewForm>
+    </AuthForm>
   );
 }

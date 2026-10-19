@@ -1202,3 +1202,49 @@ main:focus {
     transition: none !important;
   }
 }
+
+/* Authentication feedback uses existing surface and typography tokens. */
+.password-requirements {
+  margin-top: 10px;
+}
+.password-requirements ul {
+  display: grid;
+  gap: 6px;
+  margin: 10px 0;
+  list-style: none;
+  padding: 0;
+}
+.password-requirements li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted-readable);
+  font-size: 11px;
+  line-height: 1.5;
+}
+.password-requirements .requirement-met {
+  color: var(--accent);
+}
+.password-requirements svg {
+  flex-shrink: 0;
+}
+.form-notice {
+  overflow-wrap: anywhere;
+}
+.form-notice h3 {
+  font-size: 21px;
+  margin-bottom: 8px;
+}
+form fieldset {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  min-width: 0;
+}
+
+.dashboard-layout { display: grid; place-items: center; min-height: 70svh; padding-block: 3rem; }
+.dashboard-layout .auth-card { width: min(100%, 36rem); overflow-wrap: anywhere; }
+.dashboard-layout h1 { font-size: clamp(1.7rem, 4vw, 2.5rem); }
+.confirmation-resend { margin-top: 1.25rem; font-size: .875rem; }
+.confirmation-resend summary { cursor: pointer; padding-block: .75rem; }
+.confirmation-resend form { margin-top: .75rem; }
