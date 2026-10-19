@@ -18,3 +18,5 @@ dist/
 # Editor files
 .vscode/*
 !.vscode/extensions.json
+# TypeScript build cache
+*.tsbuildinfo

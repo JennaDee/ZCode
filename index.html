@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0B0820" />
+    <meta
+      name="description"
+      content="Meet ZCode. A thoughtfully designed space to learn programming, practice with purpose, and grow at your own pace."
+    />
+    <title>ZCode — A little curiosity. Infinite possibilities.</title>
+    <script>
+      try {
+        document.documentElement.dataset.theme =
+          localStorage.getItem("zcode-theme") === "light" ? "light" : "dark";
+        document
+          .querySelector('meta[name="theme-color"]')
+          .setAttribute(
+            "content",
+            document.documentElement.dataset.theme === "light"
+              ? "#F7F4FF"
+              : "#0B0820",
+          );
+      } catch {}
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500;550;600;650;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;500;600;650;700;750&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
