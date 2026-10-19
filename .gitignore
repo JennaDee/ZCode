@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Build files
+dist/
+
+# Environment variables (keep secrets private!)
+.env
+.env.*
+!.env.example
+
+# macOS files
+.DS_Store
+
+# Logs
+*.log
+
+# Editor files
+.vscode/*
+!.vscode/extensions.json
