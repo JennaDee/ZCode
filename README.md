@@ -1,2 +1,5 @@
 # ZCode
-ZCode is an interactive programming learning platform featuring structured lessons, hands-on coding exercises, gamified learning paths, and personalized progress tracking.
+**Learn. Practice. Progress.**
+
+ZCode is an interactive programming learning platform designed to make learning code engaging, structured, and accessible.
+
